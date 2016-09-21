@@ -16,3 +16,6 @@ def mergesort(seq):
         return seq
     else :
         return fusion([mergesort(seq[0:int(n/2)]),mergesort(seq[int(n/2):n])])
+
+// problème de recursivite de python ? maximum recursion depth exceeded in comparison
+// sys.setrecursionlimit() 
