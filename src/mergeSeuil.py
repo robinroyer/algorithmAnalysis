@@ -8,7 +8,7 @@ from get_argv import getArgv
 
 
 # CONSTANTES
-SEUIL = 42
+SEUIL = 21 # experimental
 PRINT_TIME = "-t"
 PRINT_LIST = "-p"
 

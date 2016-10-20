@@ -20,7 +20,7 @@ def bucket_sortrecurs(seq,threshold,nbbucket=0):
         buckets[int((number-lowest)* (nbbucket-1) / (biggest - lowest ) )].append(int(number))
     for j in range(len(buckets)) :
         if len(buckets[j])>threshold :
-            buckets[j]=bucket_sortrecurs(buckets[j],threshold)
+            buckets[j]=bucket_sortrecurs(buckets[j],threshold,nbbucket=0)
         elif len(buckets[j])>1 :
             buckets[j]=triInsertion(buckets[j])
         

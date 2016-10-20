@@ -9,8 +9,8 @@ def triFusion(seq,seuil=1):
         moitieGauche = seq[:mid]
         moitieDroite = seq[mid:]
 
-        triFusion(moitieGauche)
-        triFusion(moitieDroite)
+        triFusion(moitieGauche,seuil)
+        triFusion(moitieDroite,seuil)
 
         i=0
         j=0

@@ -8,6 +8,7 @@ from get_argv import getArgv
 
 
 # CONSTANTES
+DEFAULT_THRESHOLD = 1  
 PRINT_TIME = "-t"
 PRINT_LIST = "-p"
 
@@ -33,7 +34,7 @@ read.close()
 
 # Execution du MergeSort
 t1= time.time()
-sorted_array = bucket_sortrecurs(extracted_data,1)
+sorted_array = bucket_sortrecurs(extracted_data,DEFAULT_THRESHOLD)
 t2= time.time()
 
 # Affichage du tri
