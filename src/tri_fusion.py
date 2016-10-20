@@ -34,3 +34,4 @@ def triFusion(seq,seuil=1):
             j=j+1
             k=k+1
     return seq
+
