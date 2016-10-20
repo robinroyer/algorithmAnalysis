@@ -25,4 +25,7 @@ esac
 shift
 done
 
+# echo $ALGO
+# echo $EX_PATH
+# echo $OPTIONS
 python3 ./src/$ALGO.py $EX_PATH $OPTIONS
