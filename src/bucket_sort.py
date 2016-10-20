@@ -1,14 +1,31 @@
-def bucket_sort(seq):
-    biggest = 0
+from tri_insertion import triInsertion
+
+
+def bucket_sortrecurs(seq,threshold,nbbucket=0):
+    if nbbucket==0 :
+        nbbucket=len(seq)
+    biggest = seq[0]
+    lowest = seq[0]
     for number in seq:
+        if number < lowest :
+            lowest = number
         if number > biggest:
             biggest = number
+    if biggest == lowest :
+        return seq
     buckets = []
-    buckets.append([]) * (biggest / 10 + 1)
+    for j in range (nbbucket) :
+        buckets.append([])
     for number in seq:
-        buckets[number / 10].append(number)
-    for index, bucket in enumerate(buckets):
-        #Using quicksort to sort individual buckets
-        buckets[index] = quicksort(bucket)
-    new_list = [number for number in bucket for bucket in buckets]
+        buckets[int((number-lowest)* (nbbucket-1) / (biggest - lowest ) )].append(int(number))
+    for j in range(len(buckets)) :
+        if len(buckets[j])>threshold :
+            buckets[j]=bucket_sortrecurs(buckets[j],threshold)
+        elif len(buckets[j])>1 :
+            buckets[j]=triInsertion(buckets[j])
+        
+    new_list = []
+    for bucket in buckets :
+        for number in bucket :
+            new_list.append(int(number))
     return new_list
