@@ -1,6 +1,5 @@
 import time
 import sys
-
 # custom import
 from tri_fusion import triFusion
 # safe sys.argv access

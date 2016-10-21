@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# Utilisation
+# 
+# tp.sh -a [bucket|bucketSeuil|merge|mergeSeuil] -e [path_vers_exemplaire]
+# 
+# Arguments optionnels :
+# 
+# -p Imprime les nombres triés
+# -t Imprime le temps d’exécution
+
 OPTIONS=""
 while [[ $# -gt 0 ]]
 do
@@ -19,13 +28,12 @@ case $key in
     ;;
     *)
         echo "Argument inconnu: ${1}"
+        echo "Usage du script:"
+        echo "./tp.sh -a [bucket|bucketSeuil|merge|mergeSeuil] -e path_vers_exemplaire [-t] [-p]"
         exit
     ;;
 esac
 shift
 done
 
-# echo $ALGO
-# echo $EX_PATH
-# echo $OPTIONS
 python3 ./src/$ALGO.py $EX_PATH $OPTIONS

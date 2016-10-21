@@ -1,9 +1,19 @@
 from tri_insertion import triInsertion
 
+
+"""
+Implementation du Merge Sort en fonction du seuil
+
+seq: le tableau contenant les données à trier
+seuil: le seuil a partir duquel on applique un algorithme de tri par insertion sur un petit 
+return: le tableau trié
+"""
 def triFusion(seq,seuil=1):
     n=len(seq)
+    # Appel au tri par insertion en fonction du seuil
     if n<seuil+1 :
         return triInsertion(seq)
+    # Appel recursif au tri fusion
     else :
         mid = n//2
         moitieGauche = seq[:mid]
@@ -12,6 +22,7 @@ def triFusion(seq,seuil=1):
         triFusion(moitieGauche,seuil)
         triFusion(moitieDroite,seuil)
 
+        # Re-combinaise des solutions partielles en solution globale
         i=0
         j=0
         k=0
