@@ -1,10 +1,10 @@
-# Algorithm_introspection
+# AlgorithmAnalysis
 
 This repo is used to make an hybrid analysis of two recursive algorithms(empirical & theoretical):
 - *Merge Sort*
 - *Bucket Sort*
 
-> Both of these two algorithms use the insertion Sort to sort small arrays depending on a threshold parameter
+> Both of these two algorithms use the insertion Sort to sort small arrays depending on a threshold parameter.
 
 ### Execution
 
@@ -14,7 +14,7 @@ This repo is used to make an hybrid analysis of two recursive algorithms(empiric
 # -p print the sorted result
 ```
 
-> There are 180 different data files in the folder `./data` containing from `1000` numbers to `500000` numbers
+> There are 180 different data files in the folder `./data` containing from `1000` to `500000` numbers.
 
 
 ### Report
